@@ -6,6 +6,7 @@
   pip:
     name: supervisor
     state: present
+    executable: pip2
     version: "{{ supervisor_version }}"
   when: supervisor_version != 'latest'
 
@@ -13,6 +14,7 @@
   pip:
     name: supervisor
     state: present
+    executable: pip2
   when: supervisor_version == 'latest'
 
 - name: Ensure Supervisor log dir exists.
